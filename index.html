@@ -4,103 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Click Suporte</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Inter', Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9fbfd;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
+
     header {
-      background: linear-gradient(135deg, #004aad, #007bff);
+      background: #1E88E5;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 3rem 1rem;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 1.8rem;
     }
+
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+      margin-top: 8px;
+      font-size: 1rem;
       opacity: 0.9;
     }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #004aad;
-    }
+
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 20px;
     }
-    .service {
+
+    .service-card {
       background: white;
-      padding: 1.5rem;
-      border-radius: 15px;
+      border-radius: 10px;
+      padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+
+    .service-card:hover {
+      transform: translateY(-4px);
     }
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+
+    .service-card h3 {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      color: #1E88E5;
     }
-    form {
+
+    .form-section {
       background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-top: 2rem;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
+    .form-section h2 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: #1E88E5;
+    }
+
     form input, form select, form textarea, form button {
       width: 100%;
-      padding: 0.9rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      padding: 10px;
       border-radius: 8px;
-      font-size: 1rem;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
     }
+
     form button {
-      background: linear-gradient(135deg, #004aad, #007bff);
+      background: #1E88E5;
       color: white;
       border: none;
-      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: 0.2s;
     }
+
     form button:hover {
-      background: linear-gradient(135deg, #003080, #0056b3);
+      background: #1565C0;
     }
+
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background: #f0f4f8;
-      margin-top: 2rem;
+      padding: 15px;
+      background: #f1f1f1;
       font-size: 0.9rem;
-      color: #666;
     }
+
+    /* Botão flutuante WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -108,91 +107,82 @@
       background: #25D366;
       color: white;
       border-radius: 50%;
-      padding: 15px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 28px;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logotipo.png" alt="Click Suporte" style="max-width:120px; margin-bottom:1rem;">
     <h1>Click Suporte</h1>
-    <p>Soluções em tecnologia, sem complicação</p>
+    <p>Suporte técnico online e presencial para você e sua empresa</p>
   </header>
 
-  <section>
-    <h2>Nossos Serviços</h2>
-    <div class="services">
-      <div class="service">
-        <div class="service-icon">💻</div>
-        <h3>Suporte Remoto</h3>
-        <p>Atendimento online imediato para resolver seus problemas de TI sem sair de casa.</p>
-      </div>
-      <div class="service">
-        <div class="service-icon">⚡</div>
-        <h3>Otimização</h3>
-        <p>Deixe seu PC e celular mais rápidos e eficientes.</p>
-      </div>
-      <div class="service">
-        <div class="service-icon">⚙️</div>
-        <h3>Instalação</h3>
-        <p>Configuração de softwares, impressoras e internet de forma prática.</p>
-      </div>
-      <div class="service">
-        <div class="service-icon">👨‍🔧</div>
-        <h3>Presencial</h3>
-        <p>Quando necessário, vamos até você para resolver presencialmente.</p>
-      </div>
+  <section class="services">
+    <div class="service-card">
+      <h3>💻 Suporte Remoto</h3>
     </div>
+    <div class="service-card">
+      <h3>📱 Otimização PC / Celular</h3>
+    </div>
+    <div class="service-card">
+      <h3>⚙️ Instalação & Configuração</h3>
+    </div>
+    <div class="service-card">
+      <h3>🎧 Atendimento Presencial</h3>
+    </div>
+  </section>
 
-    <h2>Solicite seu Atendimento</h2>
-    <form id="supportForm">
+  <section class="form-section">
+    <h2>Solicitar atendimento</h2>
+    <form onsubmit="sendMessage(); return false;">
       <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="email" id="email" placeholder="Seu e-mail (opcional)">
-      <input type="text" id="whatsapp" placeholder="Seu WhatsApp" required>
-      <select id="tipo" required>
+      <input type="text" id="whatsapp" placeholder="WhatsApp" required>
+      <select id="tipo">
         <option value="">Selecione o tipo de problema</option>
-        <option>PC</option>
-        <option>Celular</option>
-        <option>Internet</option>
-        <option>Outro</option>
+        <option>Suporte Remoto</option>
+        <option>Otimização</option>
+        <option>Instalação/Configuração</option>
+        <option>Atendimento Presencial</option>
       </select>
-      <textarea id="descricao" rows="4" placeholder="Descreva seu problema" required></textarea>
-      <button type="submit">🚀 Solicitar Atendimento</button>
+      <textarea id="descricao" rows="3" placeholder="Descreva o problema" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
   <footer>
-    <p>Click Suporte © 2025 – Tecnologia ao seu alcance.</p>
+    © 2025 Click Suporte • contato@clicksuporte.com • (21) 99643-9792
   </footer>
 
-  <a href="https://wa.me/5521993825550" class="whatsapp-float">💬</a>
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5521996439792" class="whatsapp-float" target="_blank">💬</a>
 
   <script>
-    document.getElementById("supportForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    function sendMessage() {
       const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
       const whatsapp = document.getElementById("whatsapp").value;
       const tipo = document.getElementById("tipo").value;
       const descricao = document.getElementById("descricao").value;
 
-      const mensagem = `Olá, meu nome é ${nome}. Meu WhatsApp é ${whatsapp}. Tenho um problema com ${tipo}. Detalhes: ${descricao}.`;
-      const url = `https://wa.me/5521993825550?text=${encodeURIComponent(mensagem)}`;
+      const msg = `Olá, meu nome é ${nome}.%0A` +
+                  `WhatsApp: ${whatsapp}%0A` +
+                  `Tipo: ${tipo}%0A` +
+                  `Descrição: ${descricao}`;
 
-      // abre no WhatsApp
-      window.open(url, '_blank');
+      // Envia para WhatsApp
+      window.open(`https://wa.me/5521996439792?text=${msg}`, "_blank");
 
-      // envia email (simples mailto)
-      const mailto = `mailto:click.suporte.ti@gmail.com?subject=Novo atendimento - ${tipo}&body=${encodeURIComponent(mensagem + (email ? " | Email: " + email : ""))}`;
-      window.location.href = mailto;
-    });
+      // Envia para Email
+      window.open(`mailto:click.suporte.ti@gmail.com?subject=Novo Atendimento - ${tipo}&body=${msg}`, "_blank");
+    }
   </script>
+
 </body>
 </html>
