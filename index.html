@@ -7,85 +7,71 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: #1E88E5;
+      background: linear-gradient(135deg, #1E88E5, #1565C0);
       color: white;
-      padding: 20px;
+      padding: 50px 20px;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+      font-weight: 600;
     }
 
     header p {
-      margin-top: 8px;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .service-card h3 {
-      margin: 10px 0 0;
-      font-size: 1rem;
-      color: #1E88E5;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      opacity: 0.95;
     }
 
     .form-section {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
       background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .form-section h2 {
-      margin-bottom: 15px;
-      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      text-align: center;
       color: #1E88E5;
     }
 
-    form input, form select, form textarea, form button {
+    form input, form textarea, form button {
       width: 100%;
-      margin-bottom: 12px;
-      padding: 10px;
+      margin-bottom: 15px;
+      padding: 12px;
       border-radius: 8px;
       border: 1px solid #ddd;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #1E88E5;
+      outline: none;
+      box-shadow: 0 0 4px rgba(30,136,229,0.3);
     }
 
     form button {
       background: #1E88E5;
       color: white;
       border: none;
-      font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.3s;
     }
 
     form button:hover {
@@ -94,9 +80,11 @@
 
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #f1f1f1;
       font-size: 0.9rem;
+      margin-top: 40px;
+      color: #555;
     }
 
     /* Botão flutuante WhatsApp */
@@ -114,7 +102,12 @@
       justify-content: center;
       font-size: 28px;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      background: #20b858;
     }
   </style>
 </head>
@@ -122,35 +115,21 @@
 
   <header>
     <h1>Click Suporte</h1>
-    <p>Suporte técnico online e presencial para você e sua empresa</p>
+    <p>Atendimento rápido, simples e direto ao ponto.</p>
   </header>
-
-  <section class="services">
-    <div class="service-card">
-      <h3>💻 Suporte Remoto</h3>
-    </div>
-    <div class="service-card">
-      <h3>⚙️ Instalação & Configuração</h3>
-    </div>
-  </section>
 
   <section class="form-section">
     <h2>Solicitar atendimento</h2>
     <form onsubmit="sendMessage(); return false;">
       <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="text" id="whatsapp" placeholder="WhatsApp" required>
-      <select id="tipo">
-        <option value="">Selecione o tipo de problema</option>
-        <option>Suporte Remoto</option>
-        <option>Instalação/Configuração</option>
-      </select>
-      <textarea id="descricao" rows="3" placeholder="Descreva o problema" required></textarea>
+      <input type="text" id="whatsapp" placeholder="Seu WhatsApp" required>
+      <textarea id="descricao" rows="4" placeholder="Descreva seu problema" required></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
   <footer>
-    © 2025 Click Suporte • contato@clicksuporte.com • (21) 99382-5550
+    © 2025 Click Suporte • click.suporte.ti@gmail.com • (21) 99382-5550
   </footer>
 
   <!-- Botão flutuante WhatsApp -->
@@ -160,19 +139,17 @@
     function sendMessage() {
       const nome = document.getElementById("nome").value;
       const whatsapp = document.getElementById("whatsapp").value;
-      const tipo = document.getElementById("tipo").value;
       const descricao = document.getElementById("descricao").value;
 
       const msg = `Olá, meu nome é ${nome}.%0A` +
                   `WhatsApp: ${whatsapp}%0A` +
-                  `Tipo: ${tipo}%0A` +
-                  `Descrição: ${descricao}`;
+                  `Problema: ${descricao}`;
 
       // Envia para WhatsApp
       window.open(`https://wa.me/5521993825550?text=${msg}`, "_blank");
 
       // Envia para Email
-      window.open(`mailto:click.suporte.ti@gmail.com?subject=Novo Atendimento - ${tipo}&body=${msg}`, "_blank");
+      window.open(`mailto:click.suporte.ti@gmail.com?subject=Novo Atendimento - Click Suporte&body=${msg}`, "_blank");
     }
   </script>
 
